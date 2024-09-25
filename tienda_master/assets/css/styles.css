@@ -1,0 +1,624 @@
+/*GENERALES*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif, Helvetica, Arial;
+}
+
+body{
+    background-color: #000000;
+}
+
+a{
+    color: #000000;
+}
+
+a:visited{
+    color: #ffffff;
+}
+
+a:hover{
+    color: #555555;
+}
+
+.alert_green{
+    color:green;
+}
+
+.alert_red{
+    color:red;
+}
+
+table{
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #ffffff;
+}
+
+td{
+    border-top: 1px solid #ccc;
+    padding: 2px;
+}
+
+.thumb{
+    width: 100px;
+}
+
+/*CONTAINER*/
+#container{
+   width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
+   margin: 0; /* Eliminamos el margen para que no quede centrado */
+   box-shadow: 0px 0px 10px gray;
+   background: rgb(255, 255, 255);
+}
+
+/*HEADER*/
+
+#header{
+    height: 145px;
+    background: #F0F0F0;
+}
+
+#logo {
+    padding: 20px;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    margin: 0 auto; /* Asegura que el contenedor del logo esté centrado si tiene un ancho definido */
+}
+
+#logo img {
+    height: 100px;
+    display: block; /* Elimina el espacio en línea debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+}
+
+#logo a {
+    display: inline-block; /* Permite al enlace ser centrado junto con la imagen */
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-family: 'Open Sans', Helvetica, Arial;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 18px;
+    text-shadow: 0px 2px 1px #222222;
+    transition: all 300ms;
+}
+
+#logo a:hover {
+    text-shadow: 0px 2px 1px #222222, 0px 0px 4px #001a80;
+}
+
+/*MENU*/
+#menu {
+    clear: both;
+    background: linear-gradient(to top, black, #222222); /* Degradado negro a gris oscuro */
+    color: #ffffff;
+    height: 55px;
+    border-bottom: 4px solid #080071; /* Línea de borde inferior */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#menu ul li {
+    line-height: 55px;
+    float: left;
+    border-right: 1px solid #363636;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+
+#menu ul li:last-child {
+    border-right: none; /* Quitar el borde derecho del último elemento */
+}
+
+#menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: all 300ms;
+    font-size: 16px; /* Tamaño de fuente más legible */
+    font-weight: 600; /* Peso de fuente para mayor legibilidad */
+}
+
+#menu a:hover {
+    background: #080071;
+    border-radius: 4px; /* Bordes redondeados en hover */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    #menu ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    
+    #menu ul li {
+        width: 100%;
+        float: none;
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid #363636;
+    }
+
+    #menu ul li:last-child {
+        border-bottom: none;
+    }
+    
+    #menu {
+        height: auto;
+    }
+}
+
+/*CONTENT*/
+#content{
+    margin: 0px auto;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+}
+
+/* BARRA LATERAL */
+#lateral {
+    width: 23%;
+    min-height: 500px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+    background: linear-gradient(to bottom, #333333, #222222); /* Degradado de gris oscuro a más oscuro */
+    color: white; /* Todo el texto será blanco */
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#lateral .block_aside {
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+    padding: 15px;
+    background: linear-gradient(to bottom, #444444, #333333); /* Degradado de gris claro a gris oscuro */
+    border-radius: 0px;
+    border: 1px solid #080071;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#lateral h3 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to right, #080071, #222222); /* Degradado de azul oscuro a gris oscuro */
+    border-bottom: 2px solid #080071;
+    border-radius: 8px 8px 0 0;
+}
+
+#lateral ul {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+#lateral ul li {
+    color: white; /* El texto de los botones será blanco */
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0000006e;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Eliminamos el subrayado */
+}
+
+#lateral ul li a {
+    color: white; /* Aseguramos que los enlaces también sean blancos */
+    text-decoration: none; /* Eliminamos el subrayado de los enlaces */
+    display: block; /* Hacemos el enlace de bloque para que ocupe todo el botón */
+    padding: 10px;
+    font-size: 16px;
+}
+
+#lateral ul li:hover {
+    background-color: #080071;
+    color: white;
+    transform: scale(1.05);
+}
+
+#lateral ul li::marker {
+    color: transparent;
+}
+
+#lateral button {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #080071;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Sin subrayado en los botones */
+}
+
+#lateral button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+
+/*FORMS*/
+.form_container{
+    width: 50%;
+}
+
+label,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select, textarea{
+    display:block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select, textarea{
+    border: 1px solid #C9C9C9;
+    box-shadow: 0px 0px 2px #ccc inset;
+    background: white;
+    padding: 2px;
+    color: gray;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus{
+    border: 1px solid #080071;
+    color: black;
+}
+
+input[type="button"],
+input[type="submit"],
+button, .button{
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: #080071;
+    border: 1px solid #080071;
+    cursor:pointer;
+}
+
+.button{
+    background: #33AE3D;
+    color: white !important;
+    text-decoration: none;
+}
+
+.button-small{
+    width: 120px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-gestion{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button-red{
+    background: red;
+     border: 1px solid #cf1717;
+}
+
+label, 
+input[type="button"],
+input[type="submit"],
+button{
+    display:block;
+    margin-top: 10px;
+}
+
+/*CENTRAL*/
+#central{
+
+    width: 72%;
+    height: max-content;
+    float: right;
+    box-shadow: 1px solid #ddd;
+    padding:25px;
+}
+
+#central h1{
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+/* PRODUCTOS */
+.product {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    display: inline-block; /* Para que los productos floten bien incluso en diferentes tamaños */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+.product a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.product a:hover {
+    color: #555;
+}
+
+/* Ajustar imagen para que se adapte tanto en ancho como en alto */
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Las imágenes se adaptarán sin ser recortadas */
+    margin-bottom: 10px;
+    background-color: #f0f0f0; /* Fondo para espacio sobrante */
+}
+
+/* Carrito */
+.img_carrito {
+    height: 80px;
+    display: block;
+    margin: 10px auto;
+}
+
+.product h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Detalle del producto */
+#detail-product {
+    width: 100%;
+}
+
+#detail-product .image {
+    display: block;
+    width: 47%;
+    float: left;
+}
+
+#detail-product img {
+    display: block;
+    width: 100%;
+    float: left;
+    height: auto;
+    object-fit: contain; /* Mantener la proporción en las imágenes del detalle */
+}
+
+#detail-product .data {
+    width: 50%;
+    float: right;
+}
+
+#detail-product .description {
+    margin-bottom: 20px;
+}
+
+#detail-product .price {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+#detail-product .button {
+    width: 200px;
+    text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+    .product {
+        width: 45%; /* Ajusta el ancho de los productos para pantallas medianas */
+        margin: 5px;
+    }
+}
+
+/* Ajustes para pantallas pequeñas (smartphones) */
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Para pantallas pequeñas, los productos ocuparán el 100% del ancho */
+        margin-bottom: 20px;
+    }
+
+    .product img {
+        height: auto; /* Deja que la imagen se ajuste automáticamente sin forzar altura */
+    }
+}
+
+@media (max-width: 480px) {
+    .product img {
+        height: 150px; /* Para pantallas extra pequeñas, ajustamos la altura de las imágenes */
+    }
+}
+
+
+/*FOOTER*/
+#footer{
+    clear: both;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+    color: white;
+    background: #222222;
+    border-top: 4px solid #080071;
+}
+
+/*CARRITO*/
+.delete-carrito{
+   width: 295px;
+   float: left; 
+}
+
+.button-delete{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+.button-carrito{
+    width: 70px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.total-carrito{
+   width: 295px;
+   float: right; 
+}
+
+.total-carrito h3{
+    display: block;
+    float:left;
+    margin-top: 5px;
+}
+
+.button-pedido{
+    display: block;
+    float: right;
+    width: 100px;
+}
+
+.updown-unidades{
+    width: 80px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button{
+    display: block;
+    width: 20px;
+    float: left;
+    padding:2px;
+    margin: 7px;
+}
+
+
+/* Responsive Design */
+
+/* Pantallas pequeñas (teléfonos móviles) */
+@media only screen and (max-width: 768px) {
+    #container {
+        width: 100%;
+    }
+
+    #header {
+        height: auto;
+    }
+
+    #logo img {
+        height: 80px;
+    }
+
+    #menu ul {
+        display: block;
+        text-align: left;
+    }
+
+    #menu ul li {
+        float: none;
+        border-right: none;
+        border-bottom: 1px solid #363636;
+        width: 100%;
+    }
+
+    #lateral {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #central {
+        width: 100%;
+        float: none;
+        border-left: none;
+    }
+
+    .product {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #detail-product .image, 
+    #detail-product .data {
+        width: 100%;
+        float: none;
+    }
+
+    .form_container {
+        width: 100%;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #container {
+        width: 100%;
+    }
+
+    #lateral {
+        width: 30%;
+    }
+
+    #central {
+        width: 65%;
+    }
+
+    .product {
+        width: 45%;
+    }
+
+    #detail-product .image, 
+    #detail-product .data {
+        width: 48%;
+    }
+}
